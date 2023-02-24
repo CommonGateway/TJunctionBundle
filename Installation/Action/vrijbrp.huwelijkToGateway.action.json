@@ -1,0 +1,20 @@
+{
+  "title": "simxmlZaakToZgwZaakAction",
+  "$id": "https://vrijbrp.nl/action/vrijbrp.huwelijkToGateway.action.json",
+  "$schema": "https://json-schema.org/draft/2020-12/action",
+  "version": "0.0.1",
+  "listens": [
+    "zds.inbound"
+  ],
+  "conditions": {
+    "==": {
+
+    }
+  },
+  "class": "CommonGateway\\CoreBundle\\ActionHandler\\RequestProxyHandler",
+  "configuration": {
+    "source": "https://vrijbrp.nl/source/commonground-gateway-v1"
+  },
+  "isLockable": false,
+  "isEnabled": true
+}
