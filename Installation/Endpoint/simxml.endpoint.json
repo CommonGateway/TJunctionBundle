@@ -1,0 +1,9 @@
+{
+  "title": "SimXML",
+  "$id": "https://vrijbrp.nl/source/simxml.endpoint.json",
+  "$schema": "https://docs.commongateway.nl/schemas/Endpoint.schema.json",
+  "version": "0.0.1",
+  "path": "/simxml",
+  "methods": ["POST","GET"],
+  "throws": ["xml.inbound"]
+}

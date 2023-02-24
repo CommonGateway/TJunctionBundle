@@ -1,0 +1,12 @@
+{
+  "title": "Gateway V1",
+  "$id": "https://vrijbrp.nl/source/commonground-gateway-v1.source.json",
+  "$schema": "https://docs.commongateway.nl/schemas/Gateway.schema.json",
+  "version": "0.0.1",
+  "name": "Gateway V1",
+  "location": "commonground-gateway.local",
+  "auth": "none",
+  "configuration": {
+
+  }
+}
