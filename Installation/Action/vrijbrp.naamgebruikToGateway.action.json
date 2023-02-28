@@ -1,15 +1,18 @@
 {
   "title": "simxmlZaakToZgwZaakAction",
   "$id": "https://vrijbrp.nl/action/vrijbrp.naamgebruikToGateway.action.json",
-  "$schema": "https://json-schema.org/draft/2020-12/action",
-  "version": "0.0.1",
+  "$schema": "https://docs.commongateway.nl/schemas/Action.schema.json",
+  "version": "0.0.2",
   "listens": [
     "zds.inbound"
   ],
   "conditions": {
-    "==": {
-
-    }
+    "==": [
+      {
+        "var": "SOAP-ENV:Body.ns2:zakLk01.ns2:object.ns2:object.ns2:isVan.ns2:gerelateerde.ns2:code"
+      },
+      "B0348"
+    ]
   },
   "class": "CommonGateway\\CoreBundle\\ActionHandler\\RequestProxyHandler",
   "configuration": {
