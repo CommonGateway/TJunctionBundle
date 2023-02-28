@@ -1,11 +1,11 @@
 {
-  "title": "SimXML",
-  "$id": "https://vrijbrp.nl/source/simxml.endpoint.json",
+  "title": "ZDS",
+  "$id": "https://vrijbrp.nl/source/zds.endpoint.json",
   "$schema": "https://docs.commongateway.nl/schemas/Endpoint.schema.json",
-  "version": "0.0.2",
-  "name": "SimXML endpoint",
-  "pathRegex": "^simxml$",
-  "path": "simxml",
-  "methods": ["POST","GET"],
-  "throws": ["xml.inbound"]
+  "version": "0.0.1",
+  "name": "ZDS endpoint",
+  "pathRegex": "^stuf/zds",
+  "path": "stuf/zds",
+  "methods": ["POST"],
+  "throws": ["zds.inbound"]
 }

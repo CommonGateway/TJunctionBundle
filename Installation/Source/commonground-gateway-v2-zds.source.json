@@ -1,0 +1,14 @@
+{
+  "title": "Gateway V2",
+  "$id": "https://vrijbrp.nl/source/commonground-gateway-v2-zds.source.json",
+  "$schema": "https://docs.commongateway.nl/schemas/Gateway.schema.json",
+  "version": "0.0.1",
+  "name": "Gateway V2",
+  "location": "common-gateway.local/api/stuf/zds",
+  "auth": "none",
+  "configuration": {
+    "cert": "Insert x509 certificate here",
+    "ssl_key": "Insert RSA private key for certificate here",
+    "verify": false
+  }
+}

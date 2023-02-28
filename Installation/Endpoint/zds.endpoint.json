@@ -4,8 +4,8 @@
   "$schema": "https://docs.commongateway.nl/schemas/Endpoint.schema.json",
   "version": "0.0.1",
   "name": "ZDS endpoint",
-  "pathRegex": "^stuf/zds$",
-  "path": "stuf/zds",
+  "pathRegex": "^stuf/zds/.*$",
+  "path": "stuf/zds/{route}",
   "methods": ["POST"],
   "throws": ["zds.inbound"]
 }
