@@ -1,5 +1,5 @@
 {
-  "title": "simxmlZaakToZgwZaakAction",
+  "title": "ZdsDocumentToSource",
   "$id": "https://vrijbrp.nl/action/vrijbrp.verhuizenToGateway.action.json",
   "$schema": "https://docs.commongateway.nl/schemas/Action.schema.json",
   "version": "0.0.2",
