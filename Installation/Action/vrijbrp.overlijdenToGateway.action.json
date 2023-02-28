@@ -9,7 +9,7 @@
   "conditions": {
     "==": [
       {
-        "var": "SOAP-ENV:Body.ns2:zakLk01.ns2:object.ns2:object.ns2:isVan.ns2:gerelateerde.ns2:code"
+        "var": "body.SOAP-ENV:Body.ns2:zakLk01.ns2:object.ns2:isVan.ns2:gerelateerde.ns2:code"
       },
       "B0360"
     ]

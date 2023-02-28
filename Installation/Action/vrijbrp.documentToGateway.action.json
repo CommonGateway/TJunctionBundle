@@ -7,7 +7,7 @@
     "zds.inbound"
   ],
   "conditions": {
-    "var": "SOAP-ENV:Body.ns2:edcLk01"
+    "var": "body.SOAP-ENV:Body.ns2:edcLk01"
   },
   "class": "CommonGateway\\CoreBundle\\ActionHandler\\RequestProxyHandler",
   "configuration": {

@@ -7,16 +7,14 @@
     "zds.inbound"
   ],
   "conditions": {
-    "conditions": {
-      "||": [
-        {
-          "var": "SOAP-ENV:Body.ns2:genereerZaakIdentificatie_Di02"
-        },
-        {
-          "var": "SOAP-ENV:Body.ns2:genereerDocumentIdentificatie_Di02"
-        }
-      ]
-    }
+    "or": [
+      {
+        "var": "body.SOAP-ENV:Body.ns2:genereerZaakIdentificatie_Di02"
+      },
+      {
+        "var": "body.SOAP-ENV:Body.ns2:genereerDocumentIdentificatie_Di02"
+      }
+    ]
   },
   "class": "CommonGateway\\CoreBundle\\ActionHandler\\RequestProxyHandler",
   "configuration": {

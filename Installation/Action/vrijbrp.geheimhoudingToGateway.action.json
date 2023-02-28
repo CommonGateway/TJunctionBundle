@@ -9,7 +9,7 @@
   "conditions": {
     "==": [
       {
-        "var": "SOAP-ENV:Body.ns2:OntvangenIntakeNotificatie.Body.SIMXML.METADATA.ZAAKTYPE"
+        "var": "body.SOAP-ENV:Body.ns2:OntvangenIntakeNotificatie.Body.SIMXML.METADATA.ZAAKTYPE"
       },
       "B0328"
     ]
