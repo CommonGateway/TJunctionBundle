@@ -1,9 +1,9 @@
 <?php
 // src/PetStoreBundle.php
-namespace CommonGateway\PetStoreBundle;
+namespace CommonGateway\TJunctionBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class PetStoreBundle extends Bundle
+class TJunctionBundle extends Bundle
 {
 }
