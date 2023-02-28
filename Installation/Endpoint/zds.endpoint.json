@@ -3,7 +3,8 @@
   "$id": "https://vrijbrp.nl/source/zds.endpoint.json",
   "$schema": "https://docs.commongateway.nl/schemas/Endpoint.schema.json",
   "version": "0.0.1",
-  "path": "/stuf/zds",
+  "pathRegex": "^stuf/zds$",
+  "path": "stuf/zds",
   "methods": ["POST"],
   "throws": ["zds.inbound"]
 }
