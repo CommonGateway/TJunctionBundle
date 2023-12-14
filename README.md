@@ -1,99 +1,95 @@
-# PetStoreBundle
-An example repository for creating php symfony flex bundles
+# TJunctionBundle [![Codacy Badge](https://app.codacy.com/project/badge/Grade/980ea2efc85a427ea909518f29506ff6)](https://app.codacy.com/gh/CommonGateway/TJunctionBundle/dashboard?utm_source=gh\&utm_medium=referral\&utm_content=\&utm_campaign=Badge_grade)
 
+This bundle is intended to direct incoming messages to the correct commonground-gateway.
 
-### Using this bundle
+The first section is about installing plugins. The latter part is about custom plugins to extend Common Gateway functionality.
 
-#### Installing with common-gateway admin user-interface
-@todo!
+### Installation with the Common Gateway admin user-interface
 
-#### Installing with php commands
+Once a bundle is set up correctly (like this repository), the Common Gateway can discover the bundle without additional configuration. Head to the `Plugins` tab to search, select and install plugins.
 
-To execute the following command you will need [Composer](https://getcomposer.org/download/) or a dockerized installation which already has php and composer.
+#### Installing with PHP commands
 
-U can install this plugin by installing with command:
-`composer require common-gateway/pet-store-bundle:dev-main` or dockerized: `docker-compose exec php composer require common-gateway/pet-store-bundle:dev-main`
-in the directory where your composer.json lives.
+To execute the following command, you will need [Composer](https://getcomposer.org/download/) or a dockerized installation that already has PHP and Composer.
 
-If you also want to install the schemas as entities you can install them with command:
-`php bin/console commongateway:install common-gateway/pet-store-bundle` or dockerized: `docker-compose exec php bin/console commongateway:install common-gateway/pet-store-bundle`
+The Composer method in the terminal and root folder:
 
-### Creating your own bundle
+> for the installation of the plugin
 
-##### Requirements
-- [GitHub](https://github.com/login) account or organization
-- [Packagist](https://packagist.org/login/) account
-- [Composer](https://getcomposer.org/download/) or if your project is dockerized, [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+`$composer require common-gateway/pet-store-bundle:dev-main`
 
-#### Using this template
+> for the installation of schemas
 
-To create your own symfony bundle. You can copy this repository for a fast start.
+`$php bin/console commongateway:install common-gateway/pet-store-bundle`
+
+The dockerized method in the terminal and root folder:
+
+> for the installation of the plugin
+
+`$docker-compose exec php composer require common-gateway/pet-store-bundle:dev-main`
+
+> for the installation of schemas
+
+`$docker-compose exec php bin/console commongateway:install common-gateway/pet-store-bundle`
+
+***
+
+## Creating your Bundle
+
+This section is for developers who want to build plugins to extend Common Gateway functionality without adding to the core codebase.
+
+The following knowledge is assumed and/or installed:
+
+[Composer](https://getcomposer.org/download/)
+[Packagist](https://packagist.org/)
+[Docker](https://www.docker.com/products/docker-desktop/)
+[Schema.json](https://json-schema.org/)
+Basic knowledge of the [Common Gateway](https://github.com/CommonGateway)
+
+### Using this template
+
+This template is for rapid Symfony bundle development and meant as a model to base your custom plugin on. Follow the next steps to create your plugin within 45 minutes or less
 
 1. Login on [GitHub](https://github.com)
-2. Use [this template](https://github.com/CommonGateway/TJunctionBundle/generate)
-3. Name your bundle (CamelCase)
+2. Use [this template](https://github.com/CommonGateway/PetStoreBundle/generate)
+3. Name your Bundle (CamelCase). The bundle needs to end with `Bundle` as per Symfony [naming](https://symfony.com/doc/current/bundles/best_practices.html#bundles-naming-conventions) conventions.
 4. Press the green button `Create repository from template`
-5. Update file names and namespace to your fitting 
-   - Open composer.json, and change the name to your fitting. The first word should be the namespace and the second the name of your bundle. Check the autoload field to be set accordingly. Note: this is kebab-case. Also read: [naming your package](https://packagist.org/about#naming-your-package)
-   - Open PetStoreBundle.php and change the Bundle name and namespace. The namespace should be the same as your package name in composer.json but in CamelCase. So common-gateway/pet-store-bundle becomes CommonGateway/TJunctionBundle
-   - Rename the /Service and /ActionHandler accordingly (or delete if not used).
-   - Rename the /DependencyInjection/PetStoreExtension.php to your BundleNameExtension.php
-   - Rename the /Resources/config/services.yaml namespaces  
+5. Update file names and namespace to your fitting :
 
-##### Adding schemas
-If you use your bundel with the common-gateway, you can add your own schemas that will be loaded as Entities. 
-These Entities will be loaded into the database so you can work with your own objects/data.
+   * Open composer.json, and change the name to your fitting. The first word should be the namespace, and the second the bundle's name.
 
-These schemas are [json schema's](https://json-schema.org/learn/getting-started-step-by-step.html#starting-the-schema).
+   > Note: this is kebab-case. Also read: [naming your package](https://packagist.org/about#naming-your-package)
 
-You can add existing schemas or create your own and add them in /Schema. There is also an example as /Schema/example.json.
+   * Check the autoload field to be set accordingly.
+   * Open PetStoreBundle.php and change the Bundle `name` and `namespace`. The namespace should be the same as your package name in `composer.json` but in CamelCase. So `common-gateway/pet-store-bundle` becomes `CommonGateway/PetStoreBundle`
+   * Rename the `/Service` and `/ActionHandler` accordingly (or delete if not used).
+   * Rename the `/DependencyInjection/PetStoreExtension.php` to your `BundleNameExtension.php`
+   * Rename the `/Resources/config/services.yaml` namespaces
 
-Make sure your schema's have a `version` property (required) so you can update your schema's!
-Also make sure they have a unique `$id` so that they can be related to other schema's.
+### Adding schemas
 
-All required properties are: 
-- 'version' can start on '0.1.0'
-- '$schema' (https://json-schema.org/draft/2020-12/schema)
-- '$id' (https://opencatalogi.nl/example.schema.json)
-- 'type' must be 'object'
-- 'properties' muste be schema properties
+You can load [json schemas](https://json-schema.org/learn/getting-started-step-by-step.html#starting-the-schema) as Entities from your [`/Schema`](https://github.com/CommonGateway/PetStoreBundle/tree/main/Schema) folder to use in the Common Gateway and work with objects based on your schemas.
 
-If you don't have all required properties in your schema the gateway won't install that schema and will claim it is invalid.
+You can add existing schemas or create your own and add them to the`/Schema` folder. There is an example shown here in [`/Schema/example.json`](https://github.com/CommonGateway/PetStoreBundle/blob/main/Schema/example.json).
 
-If you have added schema's you can also add objects/data for them, in /Data is an example you can use.
+The following properties are required, and without them, the Gateway won't recognize the schema as valid:
 
-#### Upload to packagist
+```
+- `version` can start on '0.1.0.' 
+```
 
-Before we can use our bundle and code, we must have it online on packagist so we can install with composer.
+> without this property, you can't update schemes
 
-1. Upload to packagist  
-   - Go to [Packagist](https://packagist.org)
-   - Press `submit` in the top menu bar and paste your bundle's github repository link, the name from you composer.json will be used as package name.
-   - If valid press `Submit`
-2. Auto-update package
-   - Go to your [packagist profile](https://packagist.org/profile/).
-   - Press `Show API Token` and copy
-   - Go to your new bundle's github repository
-   - Go to your repository settings
-   - Go to webhooks, and press `Add webhook`
-   - As Payload URL, set https://packagist.org/api/github?username=yourPackagistUsername  
-   - Keep SSL verification enabled
-   - As secret, paste the copied API token from packagist
-   - Set event on `Just push the event`
-   - Press `Add webhook`
-   - If you push new code it will now push to packagis. On packagist you should not see the auto-update warning anymore. If its still there check if your username and secret are set properly on the github webhook.
+```
+- `$schema` (https://docs.commongateway.nl/schemas/Entity.schema.json)
+- `$id` (https://example.com/schema/{Your scheme name}.schema.json)
+```
 
-#### Using your code
+> Unique `$id` to be relatable to other schemas.
 
-To use the code in your library we first have to install it with composer.
+```
+- `type` must be 'object'
+- `properties` must be schema properties
+```
 
-Note: for docker add `docker-compose exec php` before all commands
-
-1. Navigate with a command line to where your composer.json lives in the project you want to use this bundle.
-   - Execute `composer require {full package name}:dev-main`
-   - Docker users: restart your containers so symfony can recognize the new Bundle's namespace
-2. Open a php file where you want to use a class.
-   - Add the correct use statement (example `use CommonGateway\PetStoreBundle\Service\PetStoreService;`)
-   - U can now use your class!
-
-In the common gateway, if you want to use your code when triggered by an event with a action, make sure the class of the action object is set as the handler name including the namespace. For example if I want to use the PetStoreService I can set the PetStoreHandler as `CommonGateway\PetStoreBundle\ActionHandler\PetStoreHandler`.
+Once you add schemas to the repository, you can also add objects/data for those schemas. There is an example shown in the [`/Data`](https://github.com/CommonGateway/PetStoreBundle/tree/main/Data) folder.
