@@ -18,23 +18,25 @@ softwareType: softwareAddon
 description:
   en:
     localisedName: null
-    genericName: This bundle is intended to direct incoming messages to the correct commonground-gateway.
-    shortDescription: TJunctionBundle
-    longDescription: This bundle is intended to direct incoming messages to the correct commonground-gateway.
+    genericName: null
+    shortDescription: "This bundle is intended to direct incoming messages to the correct commonground-gateway."
+    longDescription: "This bundle is intended to direct incoming messages to the correct commonground-gateway."
     documentation: null
     apiDocumentation: null
-    features: []
+    features:
+      - Common Ground Gateway Plugin
     screenshots: []
     videos: []
     awards: []
   nl:
     localisedName: null
-    genericName: Deze bundel is bedoeld om binnenkomende berichten naar de juiste gateway te directen.
-    shortDescription: TJunctionBundle
-    longDescription: SDeze bundel is bedoeld om binnenkomende berichten naar de juiste gateway te directen.
+    genericName: null
+    shortDescription: "Deze bundel is bedoeld om binnenkomende berichten naar de juiste gateway te directen."
+    longDescription: "Deze bundel is bedoeld om binnenkomende berichten naar de juiste gateway te directen."
     documentation: null
     apiDocumentation: null
-    features: []
+    features:
+      - Common Ground Gateway Plugin
     screenshots: []
     videos: []
     awards: []
