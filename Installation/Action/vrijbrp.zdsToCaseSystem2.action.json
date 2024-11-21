@@ -1,0 +1,51 @@
+{
+  "title": "ZdsMessageToSource2",
+  "$id": "https://vrijbrp.nl/action/vrijbrp.zdsToCaseSystem2.action.json",
+  "$schema": "https://docs.commongateway.nl/schemas/Action.schema.json",
+  "version": "0.0.1",
+  "listens": [
+    "zds.inbound"
+  ],
+  "conditions": {
+    "or": [
+      {
+        "==": [
+          {
+            "var": "body.SOAP-ENV:Body.ns2:edcLk01.ns2:stuurgegevens.ns1:ontvanger.ns1:applicatie"
+          },
+          "Liber"
+        ]
+      },
+      {
+        "==": [
+          {
+            "var": "body.SOAP-ENV:Body.ns2:zakLk01.ns2:stuurgegevens.ns1:ontvanger.ns1:applicatie"
+          },
+          "Liber"
+        ]
+      },
+      {
+        "==": [
+          {
+            "var": "body.SOAP-ENV:Body.ns2:genereerDocumentIdentificatie_Di02.ns2:stuurgegevens.ns1:ontvanger.ns1:applicatie"
+          },
+          "Liber"
+        ]
+      },
+      {
+        "==": [
+          {
+            "var": "body.SOAP-ENV:Body.ns2:genereerZaakIdentificatie_Di02.ns2:stuurgegevens.ns1:ontvanger.ns1:applicatie"
+          },
+          "Liber"
+        ]
+      }
+    ]
+  },
+  "class": "CommonGateway\\CoreBundle\\ActionHandler\\RequestProxyHandler",
+  "configuration": {
+    "source": "https://vrijbrp.nl/source/caseSystem2.source.json"
+  },
+  "isLockable": false,
+  "isEnabled": true
+}

@@ -1,0 +1,12 @@
+{
+  "title": "CaseSystem 1",
+  "$id": "https://vrijbrp.nl/source/caseSystem1.source.json",
+  "$schema": "https://docs.commongateway.nl/schemas/Gateway.schema.json",
+  "version": "0.0.1",
+  "name": "CaseSystem 1",
+  "location": "",
+  "auth": "none",
+  "configuration": {
+
+  }
+}
